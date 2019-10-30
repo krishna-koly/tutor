@@ -23,6 +23,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 route::resource('district','DistrictController');
-route::resource('class','ClassController');
-
+route::resource('studentclass','StudentClassController');
+route::resource('area','AreaController');
+route::resource('subject','SubjectController');
 });
