@@ -59,10 +59,10 @@
                 </a>
             </li>
 
-             <li>
-                <a href="pages/helper-classes.html">
+             <li class="{{Request::is('admin/other*')? 'active' : ''}}">
+                <a href="{{route('admin.other.index')}}">
                     <i class="material-icons">layers</i>
-                    <span>District</span>
+                    <span>Others</span>
                 </a>
             </li>
 

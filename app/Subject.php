@@ -12,9 +12,9 @@ class Subject extends Model
 
      use SoftDeletes;
 
-    public function studentclasses(){
+    public function studentclass(){
 
-        return $this->belongsToMany('App\StudentClass')->withTimestamps();
+        return $this->belongsTo('App\StudentClass');
    
     }
 }

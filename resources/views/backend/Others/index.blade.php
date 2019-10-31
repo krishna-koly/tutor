@@ -12,7 +12,7 @@
     <div class="container-fluid">
             <div class="block-header">
                 <h2>
-           <a href="{{route('admin.subject.create')}}" class="btn btn-info" >ADD NEW SUBJECT</a>
+           <a href="{{route('admin.other.create')}}" class="btn btn-info" >ADD NEW SUBJECT</a>
                 </h2>
             </div>
 
@@ -45,43 +45,43 @@
 <thead>
 <tr>
 <th>ID</th>
-<th>Subject Name</th>
-<th>Class Name </th>
+<th>Title</th>
+<th>Different Type</th>
 <th>status</th>
-<th>Created_at</th>
+
 
 </tr>
 </thead>
 <tfoot>
 <tr>
 <th>ID</th>
-<th>Subject Name</th>
-<th>Class Name </th>
+<th>Title</th>
+<th>Different Type</th>
 <th>status</th>
-<th>Created_at</th>
+
 
 </tr>
 </tfoot>
 <tbody>
 
-@foreach($subjects as $key=>$subject)
+@foreach($others as $key=>$other)
 <tr>
 
 <td>{{$key+1}} </td>
-<td>{{$subject->name}} </td>
+<td>{{$other->name}} </td>
 
 
-<td>{{$subject->studentclass['name']}}</td>
-<td>{{$subject->status}} </td>
-<td>{{$subject->created_at}} </td>
+<td>{{$other->diff_type}}</td>
+<td>{{$other->status}} </td>
+
 
 <td>
-<a href="#" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
+<a href="{{route('admin.other.edit', $other->id )}}" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
 
  <!-- <a href="#" class="btn btn-info btn-xs"><i class="material-icons">delete</a> -->
 
                                         <span>
-                                            <form action="#" method="POST">
+                                            <form action="{{ route('admin.other.destroy', $other->id )}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-info btn-xs">

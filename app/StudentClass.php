@@ -12,7 +12,7 @@ class StudentClass extends Model
 
     public function subjects(){
 
-        return $this->belongsToMany('App\StudentClass')->withTimestamps();
+        return $this->hasmany('App\Subject');
    
     }
 }
