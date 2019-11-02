@@ -12,7 +12,7 @@
     <div class="container-fluid">
             <div class="block-header">
                 <h2>
-           <a href="{{route('admin.other.create')}}" class="btn btn-info" >ADD NEW SUBJECT</a>
+           <a href="{{route('admin.district.create')}}" class="btn btn-info" >Add new District </a>
                 </h2>
             </div>
 
@@ -45,43 +45,55 @@
 <thead>
 <tr>
 <th>ID</th>
-<th>Title</th>
-<th>Different Type</th>
-<th>status</th>
-
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Contact Address</th>
+<th>Gender</th>
+<th>image</th>
+<th>Status</th>
+<th>Created_at</th>
+<th>Action</th>
 
 </tr>
 </thead>
 <tfoot>
 <tr>
 <th>ID</th>
-<th>Title</th>
-<th>Different Type</th>
-<th>status</th>
-
-
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Contact Address</th>
+<th>Gender</th>
+<th>image</th>
+<th>Status</th>
+<th>Created_at</th>
+<th>Action</th>
 </tr>
 </tfoot>
 <tbody>
 
-@foreach($others as $key=>$other)
+@foreach($guardians as $key=>$guardian)
 <tr>
 
 <td>{{$key+1}} </td>
-<td>{{$other->name}} </td>
+<td>{{$guardian->name}} </td>
+<td>{{$guardian->phone}} </td>
+<td>{{$guardian->email}} </td>
+<td>{{$guardian->Contact_address}} </td>
+<td>{{$guardian->gender}} </td>
+<td> <img src="{{ asset("/back/images/guardian/guardian-$guardian->id.$guardian->image") }}" width="100" /></td>
 
-
-<td>{{$other->diff_type}}</td>
-<td>{{$other->status}} </td>
-
+<td>{{$guardian->status}} </td>
+<td>{{$guardian->created_at}} </td>
 
 <td>
-<a href="{{route('admin.other.edit', $other->id )}}" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
+<a href="#" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
 
  <!-- <a href="#" class="btn btn-info btn-xs"><i class="material-icons">delete</a> -->
 
                                         <span>
-                                            <form action="{{ route('admin.other.destroy', $other->id )}}" method="POST">
+                                            <form action="{{ route('admin.guardian.destroy', $guardian->id )}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-info btn-xs">
@@ -117,7 +129,7 @@
 @push('js')
 
 
-    <script src="{{asset('back/plugins/jquery-datatable/jquery.dataTables.js')}}"></script>
+   <script src="{{asset('back/plugins/jquery-datatable/jquery.dataTables.js')}}"></script>
     <script src="{{asset('back/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js')}}"></script>
     <script src="{{asset('back/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')}}"></script>
     <script src="{{asset('back/plugins/jquery-datatable/extensions/export/buttons.flash.min.js')}}"></script>

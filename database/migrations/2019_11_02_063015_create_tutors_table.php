@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateTutorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tutors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            // $table->string('password');
-            $table->unsignedInteger('role');
-            $table->string('image',4)->default('jpg');
+            $table->string('phone');
+            $table->string('email')->nullable();
+            $table->string('Contact_address')->nullable();
+            $table->string('image', 4);
+            $table->string('gender')->nullable();
+            $table->unsignedInteger('university_id')->nullable();
+            $table->unsignedInteger('degree_id')->nullable();
+            $table->unsignedInteger('subject_id')->nullable();
+        
             $table->string('status')->default('pending');
-
-
-            //$table->rememberToken();
             $table->timestamps();
-
             $table->softDeletes();
         });
     }
@@ -38,7 +38,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-       Schema::create('users', function (Blueprint $table) {
+        Schema::create('tutors', function (Blueprint $table) {
             $table->dropSoftDeletes();  //add this line
         });
     }

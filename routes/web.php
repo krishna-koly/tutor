@@ -27,4 +27,7 @@ route::resource('studentclass','StudentClassController');
 route::resource('area','AreaController');
 route::resource('subject','SubjectController');
 route::resource('other','OtherController');
+route::resource('guardian','GuardianController');
+route::resource('tutor','TutorController');
+route::resource('user','UserController');
 });

@@ -12,7 +12,7 @@
     <div class="container-fluid">
             <div class="block-header">
                 <h2>
-           <a href="{{route('admin.other.create')}}" class="btn btn-info" >ADD NEW SUBJECT</a>
+           <a href="{{route('admin.tutor.create')}}" class="btn btn-info" >Add new Tutor </a>
                 </h2>
             </div>
 
@@ -45,43 +45,63 @@
 <thead>
 <tr>
 <th>ID</th>
-<th>Title</th>
-<th>Different Type</th>
-<th>status</th>
-
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Contact Address</th>
+<th>Gender</th>
+<th>image</th>
+<th>university_id</th>
+<th>degree_id</th>
+<th>subject_id</th>
+<th>Status</th>
+<th>Created_at</th>
+<th>Action</th>
 
 </tr>
 </thead>
 <tfoot>
 <tr>
 <th>ID</th>
-<th>Title</th>
-<th>Different Type</th>
-<th>status</th>
-
-
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Contact Address</th>
+<th>Gender</th>
+<th>image</th>
+<th>university_id</th>
+<th>degree_id</th>
+<th>subject_id</th>
+<th>Status</th>
+<th>Created_at</th>
+<th>Action</th>
 </tr>
 </tfoot>
 <tbody>
 
-@foreach($others as $key=>$other)
+@foreach($tutors as $key=>$tutor)
 <tr>
 
 <td>{{$key+1}} </td>
-<td>{{$other->name}} </td>
-
-
-<td>{{$other->diff_type}}</td>
-<td>{{$other->status}} </td>
-
+<td>{{$tutor->name}} </td>
+<td>{{$tutor->phone}} </td>
+<td>{{$tutor->email}} </td>
+<td>{{$tutor->Contact_address}} </td>
+<td>{{$tutor->gender}} </td>
+<td> <img src="{{ asset("/back/images/tutor/tutor-$tutor->id.$tutor->image") }}" width="100" /></td>
+<td>{{$tutor->university_id}} </td>
+<td>{{$tutor->degree_id}} </td>
+<td>{{$tutor->subject_id}} </td>
+<td>{{$tutor->status}} </td>
+<td>{{$tutor->created_at}} </td>
 
 <td>
-<a href="{{route('admin.other.edit', $other->id )}}" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
+<a href="#" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
 
  <!-- <a href="#" class="btn btn-info btn-xs"><i class="material-icons">delete</a> -->
 
                                         <span>
-                                            <form action="{{ route('admin.other.destroy', $other->id )}}" method="POST">
+                                            <form action="{{ route('admin.tutor.destroy', $tutor->id )}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-info btn-xs">
@@ -117,7 +137,7 @@
 @push('js')
 
 
-    <script src="{{asset('back/plugins/jquery-datatable/jquery.dataTables.js')}}"></script>
+   <script src="{{asset('back/plugins/jquery-datatable/jquery.dataTables.js')}}"></script>
     <script src="{{asset('back/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js')}}"></script>
     <script src="{{asset('back/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')}}"></script>
     <script src="{{asset('back/plugins/jquery-datatable/extensions/export/buttons.flash.min.js')}}"></script>

@@ -66,6 +66,28 @@
                 </a>
             </li>
 
+            <li class="{{Request::is('admin/guardian*')? 'active' : ''}}">
+                <a href="{{route('admin.guardian.index')}}">
+                    <i class="material-icons">layers</i>
+                    <span>Guardian</span>
+                </a>
+            </li>
+
+            <li class="{{Request::is('admin/tutor*')? 'active' : ''}}">
+                <a href="{{route('admin.tutor.index')}}">
+                    <i class="material-icons">layers</i>
+                    <span>Tutor</span>
+                </a>
+            </li>
+
+            <li class="{{Request::is('admin/user*')? 'active' : ''}}">
+                <a href="{{route('admin.user.index')}}">
+                    <i class="material-icons">layers</i>
+                    <span>User</span>
+                </a>
+            </li>
+
+
           
          
         </ul>
