@@ -1,5 +1,7 @@
 @extends('backend.layouts.app')
 
+{{\Illuminate\Support\Str::limit(100)}}
+
 @push('css')
 
    
@@ -49,6 +51,7 @@
 <th>Phone</th>
 <th>Email</th>
 <th>Contact Address</th>
+<th>About</th>
 <th>Gender</th>
 <th>image</th>
 <th>university_id</th>
@@ -67,6 +70,7 @@
 <th>Phone</th>
 <th>Email</th>
 <th>Contact Address</th>
+<th>About</th>
 <th>Gender</th>
 <th>image</th>
 <th>university_id</th>
@@ -87,6 +91,7 @@
 <td>{{$tutor->phone}} </td>
 <td>{{$tutor->email}} </td>
 <td>{{$tutor->Contact_address}} </td>
+<td>/</td>
 <td>{{$tutor->gender}} </td>
 <td> <img src="{{ asset("/back/images/tutor/tutor-$tutor->id.$tutor->image") }}" width="100" /></td>
 <td>{{$tutor->university_id}} </td>
@@ -96,7 +101,7 @@
 <td>{{$tutor->created_at}} </td>
 
 <td>
-<a href="#" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
+<a href="{{route('admin.tutor.edit', $tutor->id )}}" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
 
  <!-- <a href="#" class="btn btn-info btn-xs"><i class="material-icons">delete</a> -->
 

@@ -31,3 +31,6 @@ route::resource('guardian','GuardianController');
 route::resource('tutor','TutorController');
 route::resource('user','UserController');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

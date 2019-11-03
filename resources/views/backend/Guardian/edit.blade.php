@@ -2,8 +2,7 @@
 
 @push('css')
 
-   
-  <!-- Waves Effect Css -->
+    <!-- Waves Effect Css -->
     <link href="{{asset('back/plugins/node-waves/waves.css')}}" rel="stylesheet" />
      <!-- Dropzone Css -->
     <link href="{{asset('back/plugins/dropzone/dropzone.css')}}" rel="stylesheet">
@@ -22,6 +21,7 @@
 
     <!-- noUISlider Css -->
     <link href="{{asset('back/plugins/nouislider/nouislider.min.css')}}" rel="stylesheet" />
+
 
 @endpush
 
@@ -48,57 +48,32 @@
                            
                             <div class="row clearfix">
                            
-                           <form action="{{ route('admin.tutor.store') }}" method="post" enctype="multipart/form-data">
+                           <form action="{{ route('admin.guardian.update',$guardian->id ) }}" method="post" enctype="multipart/form-data">
 
                                 @csrf
+                                @method('PUT')
                                     <div class="col-sm-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="name"class="form-control" placeholder="Enter Full Name" />
+                                            <input type="text"  name="name"class="form-control" value="{{ $guardian->name}}" />
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="phone"class="form-control" placeholder="Enter Phone Number" />
+                                            <input type="text"  name="phone"class="form-control" value="{{ $guardian->phone}}" />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="email"class="form-control" placeholder="Enter Email Address" />
+                                            <input type="text"  name="email"class="form-control" value="{{ $guardian->email}}" />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="contact_address"class="form-control" placeholder="Enter Contact Address" />
-                                        </div>
-                                    </div>
-
-
-                                      <div class="form-group">
-                                        <div class="form-line">
-                                        <textarea id="mymce" name="about" placeholder="Enter a Description about yourself"></textarea>
-                                         </div>
-                                         </div>
-
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text"  name="university_id"class="form-control" placeholder="Enter University id" />
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text"  name="degree_id"class="form-control" placeholder="Enter Degree id" />
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text"  name="subject_id" class="form-control" placeholder="Enter subject Address" />
+                                            <input type="text"  name="contact_address"class="form-control" value="{{ $guardian->Contact_address}}" />
                                         </div>
                                     </div>
 
@@ -123,7 +98,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
 
-                            <select name="gender" class="form-control show-tick" data-live-search="true">
+                            <select name="gender" class="form-control show-tick" data-live-search="true" value="{{ $guardian['gender']}}">
 
                            
 
@@ -157,7 +132,7 @@
 
 @push('js')
 
- <!-- Slimscroll Plugin Js -->
+<!-- Slimscroll Plugin Js -->
     <script src="{{asset('back/plugins/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
 
     <!-- Bootstrap Colorpicker Js -->
@@ -184,6 +159,7 @@
 
     <!-- Waves Effect Plugin Js -->
     <script src="{{asset('back/plugins/node-waves/waves.js')}}"></script>
+
 
 @endpush
 @endsection

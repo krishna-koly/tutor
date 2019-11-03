@@ -88,7 +88,7 @@
 <td>{{$guardian->created_at}} </td>
 
 <td>
-<a href="#" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
+<a href="{{route('admin.guardian.edit', $guardian->id )}}" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
 
  <!-- <a href="#" class="btn btn-info btn-xs"><i class="material-icons">delete</a> -->
 

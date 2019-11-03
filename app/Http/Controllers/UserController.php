@@ -97,6 +97,12 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+
+        $user = User::find($id);
+       
+        
+
+        return view('backend.user.edit',compact('user'));
     }
 
     /**
@@ -109,6 +115,67 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+
+        $file = $request->file('image');
+
+        $user = User::find($id);
+       
+     
+
+       
+
+
+           
+        if ($file) {
+            $ext = strtolower($file->getClientOriginalExtension());
+
+            if ($ext != "jpg" && $ext != "png" && $ext != "gif" && $ext != "jpeg") {
+                $ext = $user->image;
+            }
+        } else {
+            $ext = $user->image;
+        }
+
+
+
+
+        $user->name = $request->name;
+         
+        $user->email = $request->email;
+       
+        
+        $user->image = $ext;
+        $user->role = $request->role;
+        
+        //$category->type=$request->type;
+        
+        //$tutor->action = $request->action;
+    
+ 
+
+        $id = $user->id;
+        
+
+        //fist a cheeck korlam je $tutor save hbe tokhn jodi file exsit kore oi folder a
+        //tahole unlink korbe and notun pic link kore dibe.
+      
+   if ($user->save()) {
+
+            if(file_exists("back/images/user/user-$id")){
+                
+                 unlink("back/images/user/user-$id");
+            }
+           
+           if ($file) {
+               # code...
+             $file->move("back/images/user", "user-$id.$ext");
+           }
+           
+        }
+
+        return redirect()->route('admin.user.index');
+        
     }
 
     /**

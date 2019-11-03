@@ -2,8 +2,7 @@
 
 @push('css')
 
-   
-  <!-- Waves Effect Css -->
+     <!-- Waves Effect Css -->
     <link href="{{asset('back/plugins/node-waves/waves.css')}}" rel="stylesheet" />
      <!-- Dropzone Css -->
     <link href="{{asset('back/plugins/dropzone/dropzone.css')}}" rel="stylesheet">
@@ -22,6 +21,8 @@
 
     <!-- noUISlider Css -->
     <link href="{{asset('back/plugins/nouislider/nouislider.min.css')}}" rel="stylesheet" />
+
+
 
 @endpush
 
@@ -48,57 +49,58 @@
                            
                             <div class="row clearfix">
                            
-                           <form action="{{ route('admin.tutor.store') }}" method="post" enctype="multipart/form-data">
+                           <form action="{{ route('admin.tutor.update',$tutor->id) }}" method="post" enctype="multipart/form-data">
 
                                 @csrf
+                                @method('PUT')
                                     <div class="col-sm-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="name"class="form-control" placeholder="Enter Full Name" />
+                                            <input type="text"  name="name"class="form-control" value="{{ $tutor->name}}" />
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="phone"class="form-control" placeholder="Enter Phone Number" />
+                                            <input type="text"  name="phone"class="form-control" value="{{ $tutor->phone}}"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="email"class="form-control" placeholder="Enter Email Address" />
+                                            <input type="text"  name="email"class="form-control" value="{{ $tutor->email}}" />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="contact_address"class="form-control" placeholder="Enter Contact Address" />
+                                            <input type="text"  name="contact_address"class="form-control" value="{{ $tutor->Contact_address}}" />
                                         </div>
                                     </div>
 
 
                                       <div class="form-group">
                                         <div class="form-line">
-                                        <textarea id="mymce" name="about" placeholder="Enter a Description about yourself"></textarea>
+                                        <textarea id="mymce" name="about" value="{{ $tutor->about}}"></textarea>
                                          </div>
                                          </div>
 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="university_id"class="form-control" placeholder="Enter University id" />
+                                            <input type="text"  name="university_id"class="form-control" value="{{ $tutor->university_id}}" />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="degree_id"class="form-control" placeholder="Enter Degree id" />
+                                            <input type="text"  name="degree_id"class="form-control"value="{{ $tutor->degree_id}}" />
                                         </div>
                                     </div>
 
 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  name="subject_id" class="form-control" placeholder="Enter subject Address" />
+                                            <input type="text"  name="subject_id" class="form-control"value="{{ $tutor->subject_id}}" />
                                         </div>
                                     </div>
 
@@ -123,7 +125,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
 
-                            <select name="gender" class="form-control show-tick" data-live-search="true">
+                            <select name="gender" class="form-control show-tick" value="{{ $tutor['gender']}}" data-live-search="true">
 
                            
 

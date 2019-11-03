@@ -12,7 +12,7 @@
     <div class="container-fluid">
             <div class="block-header">
                 <h2>
-           <a href="{{route('admin.district.create')}}" class="btn btn-info" >Add new District </a>
+           <a href="{{route('admin.user.create')}}" class="btn btn-info" >Add new USER </a>
                 </h2>
             </div>
 
@@ -83,7 +83,7 @@
 <td>{{$user->created_at}} </td>
 
 <td>
-<a href="#" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
+<a href="{{route('admin.user.edit', $user->id )}}" class="btn btn-info btn-xs"><i class="material-icons">edit</a>
 
  <!-- <a href="#" class="btn btn-info btn-xs"><i class="material-icons">delete</a> -->
 

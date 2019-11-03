@@ -113,6 +113,11 @@ class GuardianController extends Controller
     public function edit($id)
     {
         //
+        $guardian = Guardian::find($id);
+       
+        
+
+        return view('backend.Guardian.edit',compact('guardian'));
     }
 
     /**
@@ -125,6 +130,66 @@ class GuardianController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+         $file = $request->file('image');
+
+        $guardian = Guardian::find($id);
+       
+     
+
+       
+
+
+           
+        if ($file) {
+            $ext = strtolower($file->getClientOriginalExtension());
+
+            if ($ext != "jpg" && $ext != "png" && $ext != "gif" && $ext != "jpeg") {
+                $ext = $tutor->image;
+            }
+        } else {
+            $ext = $guardian->image;
+        }
+
+
+
+
+        $guardian->name = $request->name;
+        $guardian->phone = $request->phone;
+        $guardian->email = $request->email;
+        $guardian->contact_address = $request->contact_address;
+        
+        $guardian->image = $ext;
+        $guardian->gender = $request->gender;
+     
+        //$category->type=$request->type;
+        
+        //$tutor->action = $request->action;
+    
+ 
+
+        $id = $guardian->id;
+        
+
+        //fist a cheeck korlam je $tutor save hbe tokhn jodi file exsit kore oi folder a
+        //tahole unlink korbe and notun pic link kore dibe.
+      
+   if ($guardian->save()) {
+
+            if(file_exists("back/images/guardian/guardian-$id")){
+                
+                 unlink("back/images/guardian/guardian-$id");
+            }
+           
+           if ($file) {
+               # code...
+             $file->move("back/images/guardian", "guardian-$id.$ext");
+           }
+           
+        }
+
+        return redirect()->route('admin.guardian.index');
+        
     }
 
     /**

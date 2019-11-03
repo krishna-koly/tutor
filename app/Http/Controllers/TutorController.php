@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use\App\Tutor;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+
 
 class TutorController extends Controller
 {
@@ -122,6 +124,12 @@ class TutorController extends Controller
     public function edit($id)
     {
         //
+
+         $tutor = Tutor::find($id);
+       
+        
+
+        return view('backend.tutor.edit',compact('tutor'));
     }
 
     /**
@@ -134,6 +142,71 @@ class TutorController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+
+
+        $file = $request->file('image');
+
+        $tutor = Tutor::find($id);
+       
+     
+
+       
+
+
+           
+        if ($file) {
+            $ext = strtolower($file->getClientOriginalExtension());
+
+            if ($ext != "jpg" && $ext != "png" && $ext != "gif" && $ext != "jpeg") {
+                $ext = $tutor->image;
+            }
+        } else {
+            $ext = $tutor->image;
+        }
+
+
+
+
+        $tutor->name = $request->name;
+         $tutor->phone = $request->phone;
+        $tutor->email = $request->email;
+        $tutor->contact_address = $request->contact_address;
+        
+        $tutor->image = $ext;
+        $tutor->gender = $request->gender;
+        $tutor->university_id = $request->university_id;
+        $tutor->degree_id = $request->degree_id;
+        $tutor->subject_id = $request->subject_id;
+        //$category->type=$request->type;
+        
+        //$tutor->action = $request->action;
+    
+ 
+
+        $id = $tutor->id;
+        
+
+        //fist a cheeck korlam je $tutor save hbe tokhn jodi file exsit kore oi folder a
+        //tahole unlink korbe and notun pic link kore dibe.
+      
+   if ($tutor->save()) {
+
+            if(file_exists("back/images/tutor/tutor-$id")){
+                
+                 unlink("back/images/tutor/tutor-$id");
+            }
+           
+           if ($file) {
+               # code...
+             $file->move("back/images/tutor", "tutor-$id.$ext");
+           }
+           
+        }
+
+        return redirect()->route('admin.tutor.index');
+        
+        
     }
 
     /**
