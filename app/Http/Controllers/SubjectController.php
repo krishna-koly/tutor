@@ -17,6 +17,7 @@ class SubjectController extends Controller
         //
 
          $subjects = Subject::latest()->get();
+         $subjects = Subject::paginate(10);
         return view('backend.Subject.index',compact('subjects'));
     }
 
@@ -60,7 +61,7 @@ class SubjectController extends Controller
         $arr->save();
 
        // Alert::message('Sucessfull inserted new District');
-        return redirect()->route('admin.subject.index');
+        return redirect()->route('admin.subject.index')->with('success','Successfully Inserted New Subject!');
     }
 
     /**

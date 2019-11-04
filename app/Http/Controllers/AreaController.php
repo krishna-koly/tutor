@@ -17,6 +17,8 @@ class AreaController extends Controller
     {
         //
         $areas = Area::latest()->get();
+        
+        $areas = Area::paginate(10);
         return view('backend.Area.index',compact('areas'));
     }
 
@@ -58,7 +60,7 @@ class AreaController extends Controller
         $arr->save();
 
        // Alert::message('Sucessfull inserted new District');
-        return redirect()->route('admin.area.index');
+        return redirect()->route('admin.area.index')->with('success','Successfully Inserted New Area!');
     }
 
     /**
@@ -105,7 +107,7 @@ class AreaController extends Controller
         $areas->name = $request->name;
         $areas->district_id=$request->district_id;
         $areas->save();
-        return redirect()->route('admin.area.index');
+        return redirect()->route('admin.area.index')->with('success','Successfully Updated Area!');
     }
 
     /**
@@ -121,6 +123,6 @@ class AreaController extends Controller
         $area = Area::find($id);
         //dd($id);
         $area->delete();
-        return redirect()->route('admin.area.index');
+        return redirect()->route('admin.area.index')->with('warning','Successfully Deleted Area!');
     }
 }

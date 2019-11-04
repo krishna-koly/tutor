@@ -21,6 +21,7 @@ class TutorController extends Controller
         //
 
         $data['tutors'] = Tutor::all();
+        $data['tutors'] = Tutor::paginate(10);
        
         return view('backend.tutor.index',$data);
     }
@@ -101,7 +102,7 @@ class TutorController extends Controller
 
         Storage::put("files/$insertId.txt", $str);
 
-        return redirect()->route('admin.tutor.index');
+        return redirect()->route('admin.tutor.index')->with('success','Successfully Inserted Tutor!');
     }
 
     /**
@@ -204,7 +205,7 @@ class TutorController extends Controller
            
         }
 
-        return redirect()->route('admin.tutor.index');
+        return redirect()->route('admin.tutor.index')->with('info','Successfully Updated Tutor!');;
         
         
     }
@@ -222,6 +223,6 @@ class TutorController extends Controller
           $tutor = Tutor::find($id);
         //dd($id);
         $tutor->delete();
-        return redirect()->route('admin.tutor.index');
+        return redirect()->route('admin.tutor.index')->with('warning','Successfully Deleted selected tutor!');
     }
 }

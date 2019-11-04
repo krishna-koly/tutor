@@ -77,8 +77,17 @@
     </section>
 
     <section class="content">
+        @include('backend.layouts.flashmessage')
        @yield('content')
     </section>
+
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+          $(".alert").slideDown(300).delay(5000).slideUp(300);
+    });
+
+    </script>
 
     <!-- Jquery Core Js -->
     <script src="{{ asset('back/plugins/jquery/jquery.min.js')}}"></script>

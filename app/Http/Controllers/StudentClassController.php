@@ -16,6 +16,7 @@ class StudentClassController extends Controller
     {
         //
         $studentclasses = StudentClass::all();
+        $studentclasses = StudentClass::paginate(10);
 
         return view('backend.Studentclass.index', compact('studentclasses'));
     }
@@ -57,7 +58,7 @@ class StudentClassController extends Controller
         $arr->save();
 
        // Alert::message('Sucessfull inserted new District');
-        return redirect()->route('admin.studentclass.index');
+        return redirect()->route('admin.studentclass.index')->with('success','Successfully Inserted New Class!');
     }
 
     /**
@@ -99,7 +100,7 @@ class StudentClassController extends Controller
         $studentclass = StudentClass::find($id);
         $studentclass->name = $request->name;
         $studentclass->save();
-        return redirect()->route('admin.studentclass.index');
+        return redirect()->route('admin.studentclass.index')->with('info','Successfully Updated Selected Guardian!');
     }
 
     /**
@@ -115,6 +116,6 @@ class StudentClassController extends Controller
         $studentclass = StudentClass::find($id);
         //dd($id);
         $studentclass->delete();
-        return redirect()->route('admin.studentclass.index');
+        return redirect()->route('admin.studentclass.index')->with('warning','Successfully Deleted Selected Item!');
     }
 }

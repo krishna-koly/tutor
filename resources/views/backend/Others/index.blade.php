@@ -101,6 +101,7 @@
 
 </tbody>
 </table>
+{{ $others->links() }}
 </div>
 </div>
 </div>

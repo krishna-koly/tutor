@@ -16,6 +16,7 @@ class OtherController extends Controller
         //
 
          $others = Others::all();
+         $others = Others::paginate(10);
         return view('backend.Others.index',compact('others'));
     }
 
@@ -57,7 +58,7 @@ class OtherController extends Controller
         $arr->save();
 
        // Alert::message('Sucessfull inserted new District');
-        return redirect()->route('admin.other.index');
+        return redirect()->route('admin.other.index')->with('success','Successfully Inserted !');;
     }
 
     /**
@@ -104,7 +105,7 @@ class OtherController extends Controller
         $others->name = $request->name;
         $others->diff_type=$request->difftype;
         $others->save();
-        return redirect()->route('admin.other.index');
+        return redirect()->route('admin.other.index')->with('info','Successfully updated!');
     }
 
     /**
@@ -120,6 +121,6 @@ class OtherController extends Controller
         $other = Others::find($id);
         //dd($id);
         $other->delete();
-        return redirect()->route('admin.other.index');
+        return redirect()->route('admin.other.index')->with('warning','Successfully Deleted!');
     }
 }

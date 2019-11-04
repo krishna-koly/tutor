@@ -126,6 +126,7 @@
 
 </tbody>
 </table>
+{{ $tutors->links() }}
 </div>
 </div>
 </div>

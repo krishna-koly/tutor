@@ -17,6 +17,7 @@ class GuardianController extends Controller
     {
         //
          $data['guardians'] = Guardian::all();
+         $data['guardians'] = Guardian::paginate(10);
        
         return view('backend.Guardian.index',$data);
     }
@@ -89,7 +90,7 @@ class GuardianController extends Controller
             $file->move("back/images/guardian", "guardian-$insertId.$ext");
         }
 
-        return redirect()->route('admin.guardian.index');
+        return redirect()->route('admin.guardian.index')->with('success','Successfully Inserted New Guardian!');
     }
     
 
@@ -188,7 +189,7 @@ class GuardianController extends Controller
            
         }
 
-        return redirect()->route('admin.guardian.index');
+        return redirect()->route('admin.guardian.index')->with('info','Successfully updated Selected Guardian!');
         
     }
 
@@ -205,6 +206,6 @@ class GuardianController extends Controller
           $guardian = Guardian::find($id);
         //dd($id);
         $guardian->delete();
-        return redirect()->route('admin.guardian.index');
+        return redirect()->route('admin.guardian.index')->with('warning','Successfully Deleted!');
     }
 }

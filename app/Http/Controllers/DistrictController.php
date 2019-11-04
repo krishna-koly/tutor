@@ -20,6 +20,7 @@ class DistrictController extends Controller
     {
         //
         $districts = District::all();
+        $districts = District::paginate(10);
 
         return view('backend.district.index', compact('districts'));
     }
@@ -61,7 +62,7 @@ class DistrictController extends Controller
         $arr->save();
 
        // Alert::message('Sucessfull inserted new District');
-        return redirect()->route('admin.district.index');
+        return redirect()->route('admin.district.index')->with('success','Successfully Inserted New District!');
     }
 
     /**
@@ -102,7 +103,7 @@ class DistrictController extends Controller
         $district = District::find($id);
         $district->name = $request->name;
         $district->save();
-        return redirect()->route('admin.district.index');
+        return redirect()->route('admin.district.index')->with('success','Successfully Updated District!');
     }
 
     /**
@@ -118,7 +119,7 @@ class DistrictController extends Controller
         $district = District::find($id);
         //dd($id);
         $district->delete();
-        return redirect()->route('admin.district.index');
+        return redirect()->route('admin.district.index')->with('warning','Successfully Deleted!');
                        
     }
 }

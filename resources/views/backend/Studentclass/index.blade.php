@@ -96,6 +96,7 @@
 
 </tbody>
 </table>
+{{ $studentclasses->links() }}
 </div>
 </div>
 </div>

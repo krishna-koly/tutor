@@ -113,6 +113,7 @@
 
 </tbody>
 </table>
+{{ $guardians->links() }}
 </div>
 </div>
 </div>

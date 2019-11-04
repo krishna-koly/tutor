@@ -96,6 +96,7 @@
 
 </tbody>
 </table>
+{{ $districts->links() }}
 </div>
 </div>
 </div>
