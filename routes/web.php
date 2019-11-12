@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
@@ -33,4 +33,8 @@ route::resource('user','UserController');
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/ho', 'HomeController@index')->name('home');
+
+
+Route::get('/', 'Front\MasterController@index')->name('home');
+

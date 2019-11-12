@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.black_title {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.green_title {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #1A73E8;
+}
+
+/*header-top part start*/
+.h_con {
+    padding-top: 25px;
+}
+
+.logo a img {
+    height: 100px;
+    margin: 10px;
+}
+
+.h_con a {
+
+    text-transform: capitalize;
+    color: #1A73E8;
+    font-weight: 600;
+}
+
+.but {
+    margin-top: 15px;
+}
+
+/*header-top part start*/
+#navigation {
+    background: #1A73E8;
+}
+
+.navbar {
+    background: #1A73E8 !important;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    font-family: sans-serif;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    background-color: #00D2FF;
+}
+
+.h_menu {
+    margin-left: 9%;
+}
+
+/*header part start*/
+
+/*banner part start*/
+.ad_search {
+    -webkit-box-shadow: 0px 8px 14px 8px rgba(191, 187, 191, 1);
+    -moz-box-shadow: 0px 8px 14px 8px rgba(191, 187, 191, 1);
+    box-shadow: 0px 8px 14px 8px rgba(191, 187, 191, 1);
+}
+
+.a_title {
+    padding-top: 20px;
+}
+
+.s_form {
+    margin: 10px 10px;
+}
+
+.b_s {
+    font-weight: bold;
+    color: #1A73E8;
+    margin-bottom: 20px;
+}
+
+.margin_but {
+    padding-bottom: 30px;
+}
+
+.slim {
+    color: #1A73E8;
+    font-size: 18px;
+}
+
+.pad_l {
+    margin-left: 25%;
+    font-weight: 400;
+    color: #1A73E8;
+
+}
+.ban_img{
+    width: 100%;
+}
+
+/*banner part end*/
+
+/*premium tutor start*/
+#p_tutor {
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+}
+
+.p_box {
+
+    margin-top: 20px;
+    border: 1px solid #4E91FD;
+}
+.p_box:hover{
+    background: #2C2CFF;
+}
+
+.t_img {
+    height: 81px;
+    width: 69px;
+    margin: 10px;
+}
+
+.content h6{
+    padding-left: 20px;
+}
+.content p{
+    padding-left: 20px;
+}
+
+.content h6 {
+    color: #1A73E8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content p {
+    color: #313631;
+    text-decoration: none;
+
+}
+
+/*premium ttutor end*/
+
+/*recent tutor strat*/
+.owl-buttons {
+  display: none;
+}
+.owl-carousel:hover .owl-buttons {
+  display: block;
+}
+
+.owl-item {
+  text-align: center;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+  background: transparent;
+  color: #313631;
+  font-size: 40px;
+  line-height: 300px;
+  margin: 0;
+  padding: 0 60px;
+  position: absolute;
+  top: 0;
+}
+.owl-theme .owl-controls .owl-buttons .owl-prev {
+  left: 0;
+  padding-left: 20px;
+}
+.owl-theme .owl-controls .owl-buttons .owl-next {
+  right: 0;
+  padding-right: 20px;
+}
+/*carosoule end*/
+.p_box{
+    font-size: 12px;
+    text-transform: capitalize;
+    font-family: sans-serif;
+}
+/*recent tutor */
+
+/*footer section start*/
+#footer{
+    background: #1A73E8;
+    margin-top: 60px;
+    padding-bottom: 30px;
+}
+.follow{
+    margin-top: 30px;
+}
+.c_service{
+   margin-top: 30px;
+}
+.c_service p{
+    margin-top: 20px;
+}
+
+.white_title{
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.follow_icon{
+    margin: 20px 0px;
+}
+.follow_icon a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 8px 9px;
+    background: #000;
+    border-radius: 5px;
+}
+.copy_right p{
+    font-weight: 400;
+}
+.sign_f{
+    margin-top: 30px;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+#f_bottom{
+    background: #333333;
+}
+#f_bottom p{
+    color: #c6c6c6;
+    font-family: sans-serif;
+    font-size: 10px;
+    margin: 10px 0px;
+}
+#f_bottom span{
+    font-weight: 600;
+    color: #fcc200;
+}
+
+/*footer section end*/
+
+/*log in page start*/
+#login_page{
+    margin-top: 50px;
+}
+/*log in page end*/
+
+/*reg page start*/
+#reg_page{
+    margin-top: 50px;
+}
+.r_form{
+    margin-top: 50px;
+}
+/*reg page end*/

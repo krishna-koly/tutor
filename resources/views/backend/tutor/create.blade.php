@@ -39,7 +39,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                ADD NEW Gurdian
+                                ADD NEW Tutor
                               
                             </h2>
                           
