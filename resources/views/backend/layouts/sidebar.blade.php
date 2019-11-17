@@ -73,10 +73,10 @@
                 </a>
             </li>
 
-            <li class="{{Request::is('admin/tutor*')? 'active' : ''}}">
-                <a href="{{route('admin.tutor.index')}}">
+            <li class="{{Request::is('admin/alltutor*')? 'active' : ''}}">
+                <a href="{{route('admin.alltutor')}}">
                     <i class="material-icons">layers</i>
-                    <span>Tutor</span>
+                    <span>AllTutor</span>
                 </a>
             </li>
 

@@ -27,14 +27,11 @@
  @include('frontend.master.topbar')
     <!--    header section end-->
 
-   @include('frontend.master.searchtutor')
+   @include('frontend.master.flashmessage')
 
 
-
-   @include('frontend.master.featuredtutor')
-
-
-    @include('frontend.master.recenttutor')
+   @yield('content')
+   
 
 
     @include('frontend.master.footer')
@@ -50,7 +47,7 @@
     <script src="./script.js"></script>
 
     <script src="{{asset('front/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('front/js/custom.js"></script>
+    <script src="{{asset('front/js/custom.js')}}"></script>
 </body>
 
 </html>

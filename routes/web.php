@@ -30,6 +30,7 @@ route::resource('other','OtherController');
 route::resource('guardian','GuardianController');
 route::resource('tutor','TutorController');
 route::resource('user','UserController');
+Route::get('alltutor', 'Front\TutorRegisterController@index')->name('alltutor');
 });
 Auth::routes();
 
@@ -37,4 +38,12 @@ Auth::routes();
 
 
 Route::get('/', 'Front\MasterController@index')->name('home');
+
+// TUTOR register route below 
+
+Route::get('new-user-register/form', 'Front\TutorRegisterController@create')->name('newtutor');
+Route::get('Tutor-login', 'Front\TutorRegisterController@tutorlogin')->name('tutorlogin');
+Route::post('registration', 'Front\TutorRegisterController@store')->name('reg');
+Route::get('tutor-info/{id}', 'Front\TutorRegisterController@info')->name('tutorinfo');
+
 

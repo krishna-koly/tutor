@@ -10,8 +10,8 @@
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4 text-right">
                     <div class="h_con">
-                        <a href="login.html">Log In </a> <span>or</span>
-                        <a href="#">Register as Tutor </a>
+                        <a href="{{route('tutorlogin')}}">Log In </a> <span>or</span>
+                        <a href="{{route('newtutor')}}">Register as Tutor </a>
                     </div>
                     <button type="button" class="btn btn-info but">JOIN FREE</button>
                 </div>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Master;
+use App\Tutor;
+use App\TutorRegister;
 
 class MasterController extends Controller
 {
@@ -16,8 +18,9 @@ class MasterController extends Controller
     public function index()
     {
         //
-
-        return view('frontend.master.app');
+        $data['featureds']=TutorRegister::orderBy('name', 'DESC')->get(); 
+        $data['recents']=TutorRegister::orderBy('created_at', 'desc')->get();
+        return view('frontend.main_index',$data);
     }
 
     /**

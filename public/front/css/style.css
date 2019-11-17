@@ -291,3 +291,77 @@ li {
     margin-top: 50px;
 }
 /*reg page end*/
+
+
+
+
+/*tutor profile start*/
+#tutorp_page{
+    margin-top: 50px;
+}
+.tutor_profile{
+    -webkit-box-shadow: -1px 4px 10px 1px rgba(168,166,168,1);
+-moz-box-shadow: -1px 4px 10px 1px rgba(168,166,168,1);
+box-shadow: -1px 4px 10px 1px rgba(168,166,168,1);
+    margin-top: 15px;
+}
+.tutor_all_info{
+    margin-top:15px; 
+}
+.tutor_photo img{
+    width: 100%;
+    height: 250px;
+}
+.tutor_photo span{
+    font-size: 10px;
+    text-transform: capitalize;
+    font-family: sans-serif;
+}
+.profile_status{
+    background: #1A73E8;
+    padding: 5px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+}
+.social_id a{
+    text-decoration: none;
+    
+}
+.social_id .fa-facebook-official{
+    font-size:20px;
+    color: #6C82B2;
+}
+.social_id .fa-twitter-square{
+    font-size:20px;
+    color: #1DA1F2;
+}
+.social_id .fa-linkedin-square{
+    font-size:20px;
+    color: #0077B5;
+}
+.ex{
+    margin-top: 15px;
+}
+.experience{
+    margin-top: 25px;
+}
+.experience p{
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 7px;
+}
+.tution_info{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+/*tutor profile end*/
+/*tutor sidebar*/
+.mail_form{
+    margin: 5px;
+}
+.featured_tutor{
+    margin-top: 40px;
+}
+/*tutor sidebar*/
